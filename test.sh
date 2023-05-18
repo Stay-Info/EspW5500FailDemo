@@ -1,2 +1,2 @@
 cd TestModbusEsp
-./test %*
+./test.sh $*

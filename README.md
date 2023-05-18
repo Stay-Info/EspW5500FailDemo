@@ -25,7 +25,8 @@ To run the test script, you need Java 8 or higher on your machine and the variab
 	```
 	b) On Linux (not tested) :
 	```
-	./test '-ip=YOUR_W5500_IP_ADDRESS' -keep=false
+	find -type f -iname "*.sh" -exec chmod +x {} \;
+	sudo ./test.sh '-ip=YOUR_W5500_IP_ADDRESS' -keep=false
 	```
 3. After some time (between 5 minutes and 10 hours), the ADC update routine should stop and the Ethernet will stop responding. The esp debug terminal will show:
 	```

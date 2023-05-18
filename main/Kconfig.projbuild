@@ -1,0 +1,92 @@
+# put here your custom config value
+
+menu "Ethernet example"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+        config SID_ETH_SPI_HOST
+            int "SPI Host for Ethernet"
+            range 0 2
+            default 1
+            help
+                Set the SPI host used to communicate with the SPI Ethernet Controller.
+
+        config SID_ETH_SPI_CLOCK_MHZ
+            int "SPI clock speed (MHz)for Ethernet"
+            range 1 20
+            default 1
+            help
+                Set the clock speed (MHz) of SPI interface.
+
+        config SID_ETH_SPI_CS_GPIO
+            int "SPI CS GPIO number for SPI Ethernet"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+            default 41
+            help
+                Set the GPIO number used by SPI CS.
+                
+	    config SID_ETH_SPI_PHY_RST_GPIO
+            int "PHY Reset GPIO number of SPI Ethernet"
+            range -1 ENV_GPIO_OUT_RANGE_MAX
+            default -1
+            help
+                Set the GPIO number used to reset PHY chip on the first SPI Ethernet module.
+                Set to -1 to disable PHY chip hardware reset.
+                
+        config SID_ETH_SPI_INT_GPIO
+            int "Interrupt GPIO number SPI Ethernet"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_IN_RANGE_MAX
+            default 18
+            help
+                Set the GPIO number used by the first SPI Ethernet module interrupt line.
+                
+	   config SID_SPI1_SCLK_GPIO
+            int "SPI 1 SCLK GPIO number"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+            default 40
+            help
+                Set the GPIO number used by SPI SCLK 1.
+
+        config SID_SPI1_MOSI_GPIO
+            int "SPI 1 MOSI GPIO number"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+            default 38
+            help
+                Set the GPIO number used by SPI MOSI 1.
+
+        config SID_SPI1_MISO_GPIO
+            int "SPI 1 MISO GPIO number"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_IN_RANGE_MAX
+            default 39
+            help
+                Set the GPIO number used by SPI MISO 1.
+                
+        config SID_ETH_SPI_PHY_ADDR
+            int "PHY Address of SPI Ethernet"
+            range 0 31
+            default 2
+            help
+                Set the first SPI Ethernet module PHY address according your board schematic.
+                
+        config SID_ADC_SPI_HOST
+            int "SPI Host for ADC"
+            range 0 2
+            default 1
+            help
+                Set the SPI host used to communicate with the SPI ADC Controller.
+
+        config SID_ADC_SPI_CLOCK_MHZ
+            int "SPI clock speed (MHz) for ADC"
+            range 1 10
+            default 4
+            help
+                Set the clock speed (MHz) of SPI interface.
+                
+        config SID_ADC_SPI_CS_GPIO
+            int "SPI CS GPIO number for SPI ADC"
+            range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+            default 21
+            help
+                Set the GPIO number used by SPI CS.
+       
+endmenu

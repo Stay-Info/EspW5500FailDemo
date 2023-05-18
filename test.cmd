@@ -1,0 +1,2 @@
+cd TestModbusEsp
+test.cmd %*

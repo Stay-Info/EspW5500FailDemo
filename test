@@ -1,2 +1,2 @@
 cd TestModbusEsp
-./TestModbusEsp/test %*
+./test %*

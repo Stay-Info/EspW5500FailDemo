@@ -37,7 +37,6 @@ static void purgeQueue(void* nothing){
 	while(1){
 		mbc_slave_check_event(MB_READ_WRITE_MASK);
 		mbc_slave_get_param_info(&reg_info, 5000);
-		uint32_t value = uxTaskGetStackHighWaterMark(cleanTask);
 	}
 }
 
